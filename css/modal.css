@@ -1,0 +1,98 @@
+/**
+ * @author: Saul Neri
+ */
+:root {
+  --modal-bg-color: rgba(0, 0, 0, 0.75);
+  --modal-color: white;
+  --modal-border: gray;
+  --modal-text-color: black;
+  --text-size: 14px;
+}
+
+body {
+  font-family: Cambria;
+}
+
+/* Style clases */
+
+.rnd-bds { /* rounded borders */
+  border-radius: 15px;
+}
+
+.pntd-bds {
+  border: 1px dashed var(--modal-border);
+}
+
+/* modal colorscheme */
+.modal[data-theme='dark'] {
+  --modal-color: #222222;
+  --modal-border: gray;
+  --modal-text-color: white;
+}
+
+.modal-bg.is-active {
+  background-color: var(--modal-bg-color);
+  transform: translate(0, 0);
+}
+
+/* Modal */
+.modal-bg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  position: fixed;
+  transition: transform 0.3s, background-color 0.5s;
+  transform: translate(0, 100%);
+  background-color: transparent;
+}
+
+.modal {
+  width: 30vw;
+  border: 1px solid var(--modal-border);
+  background-color: var(--modal-color);
+  padding: 10px 10px;
+  z-index: 6;
+  margin: 2.5% auto;
+  font-size: var(--text-size);
+  color: var(--modal-text-color);
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: x-large;
+  border-bottom: 1px solid var(--modal-border);
+  padding-bottom: 5px;
+}
+
+.modal-body {
+  word-wrap: break-word;
+  white-space: break-space;
+  border-bottom: 1px solid var(--modal-border);
+  padding: 5px 0;
+}
+
+.modal-footer {
+  margin-top: 5px;
+}
+
+
+/* Mobile devices under 600px width screen */
+@media screen and (max-width: 600px) {
+  .modal {
+	width: 80vw;
+	border: 1px solid var(--modal-border);
+	background-color: var(--modal-color);
+	padding: 10px 10px;
+	z-index: 6;
+	margin: 10% auto;
+  }
+
+  .modal-body {
+	font-size: 16px;
+  }
+}
+
+
+

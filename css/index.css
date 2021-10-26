@@ -1,0 +1,124 @@
+:root {
+  --main-color: white;
+  --border-color: gray;
+  --text-color: black;
+  --input-focus-color: rgb(10, 100, 255);
+  --family: Arial;
+  /* colors */
+  --Red: #d01010;
+  --Green: #009030;
+  --Blue: #0040b0;
+  --Black: #222222;
+  --Gray: #aaaaaa;
+  --Yellow: #ffd834;
+}
+
+/* util clases */
+.no-bds {
+  border: 1.5px solid transparent;
+} 
+
+/* colorschemes */
+body[data-theme='dark'] {
+  --main-color: #222222;
+  --text-color: white;
+}
+
+/* elements style */
+body {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  font-family: var(--family);
+}
+
+/* inputs */
+input {
+  border: 1.5px solid var(--border-color);
+  background-color: var(--main-color);
+  transition: border 0.3s;
+  color: var(--text-color);
+  /*border-radius: 5px;*/
+  padding: 10px 10px;
+}
+
+input.no-bds:hover {
+  border: 1.5px solid transparent;
+  border-bottom: 1.5px solid var(--input-focus-color);
+}
+
+:focus {
+  outline: none; /* quita el borde que se pinta al pulsar el input */
+  border: 1.5px solid var(--input-focus-color);
+}
+
+/* buttons */
+.btn {
+  padding: 7px 10px;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  background-color: white;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: var(--Blue);
+}
+
+.btn-danger {
+  color: white;
+  background-color: var(--Red);
+}
+
+
+.btn-success {
+  color: white;
+  background-color: var(--Green);
+}
+
+.btn-warning {
+  color: black;
+  font-weight: bold;
+  background-color: var(--Yellow);
+}
+
+/* buttons events */
+.btn:hover {
+  background-color: var(--Gray);
+}
+
+.btn-danger:hover {
+  background-color: #600000;
+}
+
+.btn-success:hover {
+  background-color: #005010;
+}
+
+.btn-warning:hover {
+  color: var(--Yellow);
+  background-color: black;
+  border: 1px solid var(--Yellow);
+}
+
+
+/* mobile devices */
+@media screen and (max-width: 500px) {
+  /* elements */
+  input {
+	border: 1.5px solid var(--border-color);
+	background-color: var(--main-color);
+	transition: border 0.3s;
+	color: var(--text-color);
+	/*border-radius: 5px;*/
+	padding: 10px 10px;
+	font-size: 16px;
+  }
+
+  .btn {
+	font-size: 16px;
+	padding: 10px 15px;
+  }
+}
+
+
